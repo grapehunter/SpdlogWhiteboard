@@ -1,7 +1,6 @@
 #pragma once
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
-// Windows Header Files
+#define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <spdlog/spdlog.h>
 #include <spdlog/async_logger.h>
@@ -17,6 +16,7 @@ namespace dlllog {
 	{
 	public:
 		static std::shared_ptr<spdlog::async_logger> SetupLogger();
+		static void DestoryLogger();
 		static void Log(std::string msg);
 	};
 }
